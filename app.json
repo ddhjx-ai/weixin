@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/demo02_WXS/demo02",
+    "pages/demo01/demo01",
+    "pages/weibo/weibo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

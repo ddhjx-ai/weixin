@@ -1,0 +1,11 @@
+<view>
+  {{person.name}}今年{{age}}岁
+</view>
+
+<!-- 发微博案例 -->
+<button bindtap="send">发微博</button>
+
+<!-- 微博列表 -->
+<view wx:for="{{weibo}}" wx:key="this">
+  {{item}}
+</view>

@@ -1,0 +1,5 @@
+var num = 111
+
+module.exports={
+  num:num
+}

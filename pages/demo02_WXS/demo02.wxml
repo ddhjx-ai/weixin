@@ -1,0 +1,54 @@
+<view>
+  {{weekday}}
+</view>
+
+<!-- 微信自定义的 wxs 语法,module设置容器名 -->
+<!-- 
+    `wxs`可以理解为`javascript`的一个阉割版本。使用`wxs`的好处如下：(wxs标签中无法识别ES6语法)
+
+    1. 在`iOS`上，在`wxs`中代码执行效率是在`js`中执行的`2-20`倍。
+    2. 可以把更多的逻辑在`wxml`文件中完成。
+ -->
+<wxs module='week'>
+  var getWeekDay = function(day) {
+    var weekday = ''
+    switch (day) {
+      case 1:
+        weekday = "星期一";
+        break;
+      case 2:
+        weekday = "星期二";
+        break;
+      case 3:
+        weekday = "星期三";
+        break;
+      case 4:
+        weekday = "星期四";
+        break;
+      case 5:
+        weekday = "星期五";
+        break;
+      case 6:
+        weekday = "星期六";
+        break;
+      case 7:
+        weekday = "星期天";
+        break;
+    }
+    return weekday
+  }
+
+  module.exports={
+    getWeekDay:getWeekDay
+  }
+</wxs>
+<!-- 外部访问：模块名.key -->
+<view>{{week.getWeekDay(date)}}</view>
+
+<!-- 在 wxml 中导入外部 wxs 文件 -->
+<wxs src="./demo02.wxs" module="wxs"></wxs>
+<view>{{wxs.getWeekDay(date)}}</view>
+
+<!-- 时间案例 -->
+<wxs module="date" src="./date.wxs"></wxs>
+<view>{{date.info(time)}}</view>

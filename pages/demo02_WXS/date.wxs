@@ -1,0 +1,36 @@
+
+var getTime = function(time){
+  // 计算当前时间和指定时间的时间差
+  var now_time = getDate()
+  var that_time = getDate(time)
+  var info = ''
+
+  // console.log((now_time - that_time) / 1000 / 60)
+  var value = (now_time - that_time)/1000/60
+  if (value < 1){
+    info = "刚刚"
+  }else if(value < 60){
+    info = parseInt(value) + "分钟前"
+  }else if(value/60 < 24){
+    info = parseInt(value / 60) + "小时前"
+  }else if(value/60/24 < 30){
+    info = parseInt(value / 60 / 24) + "天前"
+  }else{
+    var yy = getDate(time).getFullYear()
+    var mm = get(getDate(time).getMonth() + 1) 
+    var dd = get(getDate(time).getDate())
+    var hh = get(getDate(time).getHours()) 
+    var m = get(getDate(time).getMinutes()) 
+    var ss = get(getDate(time).getSeconds()) 
+    info = yy+"/"+mm+"/"+dd+" "+hh+":"+m+":"+ss 
+  }
+  function get(value){
+    return value > 9 ? value : "0" + value
+  }
+
+  return info
+}
+
+module.exports={
+  info:getTime
+}

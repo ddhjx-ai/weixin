@@ -1,0 +1,33 @@
+// 通过 require() 方法导入其它 wxs 文件
+var tools = require("./tools.wxs")
+console.log(tools.num)
+
+var getWeekDay = function (day) {
+  var weekday = ''
+  switch (day) {
+    case 1:
+      weekday = "星期一";
+      break;
+    case 2:
+      weekday = "星期二";
+      break;
+    case 3:
+      weekday = "星期三";
+      break;
+    case 4:
+      weekday = "星期四";
+      break;
+    case 5:
+      weekday = "星期五";
+      break;
+    case 6:
+      weekday = "星期六";
+      break;
+    case 7:
+      weekday = "星期天";
+      break;
+  }
+  return weekday
+}
+
+module.exports.getWeekDay = getWeekDay
